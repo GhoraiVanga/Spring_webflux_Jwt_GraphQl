@@ -1,0 +1,34 @@
+type Query {
+getAllStudents : [Student]
+ getStudentById(id: ID): Student
+ getStudentByName(name: String): Student
+ 
+ getStudentsByEmail(email: String): [Student]
+ getStudentByMobile(mobile: String): [Student]
+}
+
+type Mutation {
+ addStudent(student: StudentInput ): Student
+ deleteStudentById(id: ID): Student
+ deleteStudentByName(name: String): Student
+}
+
+type Student {
+ id: ID!
+ name: String
+ email: String
+ mobile: String
+ address: String
+ gender : String
+ age    : String
+}
+
+input StudentInput {
+
+	 name: String!
+	 email: String!
+	 mobile: String!
+	 address: String!
+	 gender : String!
+	 age    : String!
+}
